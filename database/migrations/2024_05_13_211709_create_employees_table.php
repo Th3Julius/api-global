@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('employees', function (Blueprint $table) {
+        Schema::create('employee', function (Blueprint $table) {
             $table->id();
-
             $table->string('primer_nombre');
             $table->string('otros_nombres')->nullable();
             $table->string('primer_apellido');
@@ -22,11 +21,9 @@ return new class extends Migration
             $table->string('tipo_id');
             $table->string('numero_id')->unique();
             $table->string('email')->unique();
-            $table->string('fecha_ingreso')->unique();
-            $table->string('area')->unique();
-            $table->string('estado')->unique();
-            $table->string('fechahora_registro')->unique();
-
+            $table->string('area');
+            $table->string('estado');
+            $table->string('fechahora_registro');
             $table->timestamps();
         });
     }

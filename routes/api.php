@@ -7,21 +7,15 @@ use App\Http\Controllers\EmployeeController;
 //     return $request->user();
 // })->middleware('auth:sanctum');
 
-Route::get('/employees', [EmployeeController::class,'index']);
+Route::get('/employee', [EmployeeController::class,'index']);
 
-Route::get('/employees/{id}',function (){
-    return 'empleados List';
-});
+Route::post('/employee', [EmployeeController::class,'store']);
 
-Route::post('/employees', [EmployeeController::class,'store']);
+Route::get('/employee/{id}',[EmployeeController::class,'show']);
 
-Route::put('/employees/{id}',function (){
-    return 'Actualizando empleado';
-});
-
-Route::delete('/employees/{id}',function (){
-    return 'Borrando empleado';
-});
+// Route::get('/employee/{id}/{primer_nombre}',[EmployeeController::class,'mostrar']);
 
 
+Route::delete('/employee/{id}', [EmployeeController::class,'destroy']);
 
+Route::put('/employee/{id}', [EmployeeController::class,'update']); 
